@@ -1,0 +1,5 @@
+# Purpose: Ignore build outputs and local development artifacts.
+node_modules
+.env
+dist
+.DS_Store

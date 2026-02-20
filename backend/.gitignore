@@ -1,0 +1,7 @@
+# Purpose: Prevent local artifacts and secrets from being committed to source control.
+node_modules
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist

@@ -1,0 +1,42 @@
+/*
+ * Purpose: App-wide CSS for font loading, subtle gradients, skeleton shimmer, and utility tweaks.
+ * API Integration: No direct API access; supports visual loading states during API calls.
+ * State Management: CSS reacts to conditional component rendering based on React state.
+ * Navigation Flow: Shared style tokens keep transitions consistent across all routed pages.
+ * Backend Connection: Styling layer only; backend integration happens in service modules.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f7fbf8 0%, #edf5ef 100%);
+}
+
+a {
+  text-decoration: none;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 20% 20%, #91f0a3 0%, #3ca455 44%, #1d6b2e 100%);
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  background: #edf2ed;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  animation: shimmer 1.3s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
